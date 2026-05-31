@@ -16,14 +16,10 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
    npx expo start
    ```
 
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+3. run clean
+   ```bash
+   pnpm run clean:mac
+   ```
 
 ## Get a fresh project
 
@@ -33,18 +29,100 @@ When you're ready, run:
 npm run reset-project
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+shearsummit-app/
+├── app/                                    # Expo Router app directory
+│   ├── (client)/                          # Client-side screens
+│   │   ├── _layout.tsx                    # Client layout with tab navigation
+│   │   ├── index.tsx                      # Home/Explore screen
+│   │   ├── appointments.tsx               # Client appointments screen
+│   │   ├── profile.tsx                    # Client profile screen
+│   │   └── stylist/
+│   │       └── [id].tsx                   # Stylist profile detail screen
+│   ├── (stylist)/                         # Stylist-side screens
+│   │   ├── _layout.tsx                    # Stylist layout with tab navigation
+│   │   ├── dashboard.tsx                  # Stylist dashboard (Today view)
+│   │   ├── calendar.tsx                   # Calendar & availability
+│   │   ├── profile-edit.tsx               # Profile management
+│   │   └── reviews.tsx                    # Reviews & client history
+│   ├── (auth)/                            # Authentication screens
+│   │   ├── login.tsx                      # Login screen
+│   │   ├── signup.tsx                     # Sign up screen
+│   │   ├── client-onboarding.tsx          # Client onboarding
+│   │   └── stylist-onboarding.tsx         # Stylist onboarding
+│   ├── booking/                           # Booking flow
+│   │   ├── select-service.tsx             # Step 1: Select service
+│   │   ├── select-time.tsx                # Step 2: Select date/time
+│   │   └── confirm.tsx                    # Step 3: Confirm booking
+│   ├── _layout.tsx                        # Root layout
+│   └── index.tsx                          # App entry point
+│
+├── components/                            # Reusable UI components
+│   ├── ui/                                # Core UI components
+│   │   ├── Button.tsx                     # Custom button component
+│   │   ├── Card.tsx                       # Card component
+│   │   ├── Input.tsx                      # Input field component
+│   │   ├── Badge.tsx                      # Badge component
+│   │   ├── Avatar.tsx                     # Avatar component
+│   │   ├── IconButton.tsx                 # Icon button component
+│   │   ├── Chip.tsx                       # Chip/tag component
+│   │   ├── Rating.tsx                     # Star rating component
+│   │   ├── TabBar.tsx                     # Custom tab bar
+│   │   └── SearchBar.tsx                  # Search bar component
+│   │
+│   ├── client/                            # Client-specific components
+│   │   ├── StylistCard.tsx                # Stylist preview card
+│   │   ├── AppointmentCard.tsx            # Appointment card (client)
+│   │   ├── ServiceCard.tsx                # Service selection card
+│   │   ├── TimeSlot.tsx                   # Time slot selector
+│   │   ├── FilterBar.tsx                  # Filter and sort bar
+│   │   ├── PortfolioGrid.tsx              # Portfolio photo grid
+│   │   └── ReviewCard.tsx                 # Review display card
+│   │
+│   ├── stylist/                           # Stylist-specific components
+│   │   ├── AppointmentItem.tsx            # Appointment item (stylist)
+│   │   ├── DaySchedule.tsx                # Day schedule view
+│   │   ├── CalendarView.tsx               # Calendar component
+│   │   ├── ServiceForm.tsx                # Service add/edit form
+│   │   ├── VoiceAIButton.tsx              # Voice AI feature button
+│   │   ├── ClientNoteCard.tsx             # Client notes display
+│   │   └── StatsCard.tsx                  # Dashboard stats card
+│   │
+│   └── shared/                            # Shared components
+│       ├── BottomSheet.tsx                # Bottom sheet modal
+│       ├── EmptyState.tsx                 # Empty state placeholder
+│       ├── LoadingSpinner.tsx             # Loading indicator
+│       ├── Header.tsx                     # Screen header
+│       └── SafeArea.tsx                   # Safe area wrapper
+│
+├── constants/                             # App constants
+│   ├── Colors.ts                          # Color palette
+│   ├── Spacing.ts                         # Spacing scale
+│   ├── Typography.ts                      # Typography scale
+│   └── Icons.ts                           # Icon mappings
+│
+├── hooks/                                 # Custom React hooks
+│   ├── useResponsive.ts                   # Responsive design hook
+│   ├── useColorScheme.ts                  # Dark/light mode hook
+│   └── useKeyboard.ts                     # Keyboard awareness hook
+│
+├── types/                                 # TypeScript type definitions
+│   ├── index.ts                           # Main type exports
+│   ├── Stylist.ts                         # Stylist types
+│   ├── Client.ts                          # Client types
+│   ├── Appointment.ts                     # Appointment types
+│   └── Service.ts                         # Service types
+│
+├── utils/                                 # Utility functions
+│   ├── formatting.ts                      # Data formatting utilities
+│   ├── validation.ts                      # Form validation
+│   └── dateTime.ts                        # Date/time helpers
+│
+├── assets/                                # Static assets
+│   ├── images/                            # Image files
+│   └── fonts/                             # Custom fonts (if any)
+│
+├── tailwind.config.js                     # Tailwind configuration
+├── app.json                               # Expo configuration
+├── package.json                           # Dependencies
+├── tsconfig.json                          # TypeScript configuration
+└── README.md                              # Project documentation

@@ -94,7 +94,7 @@ export default function VerifyOTPScreen() {
       });
 
       // Navigate to main app
-      router.replace("/(root)/(tabs)/chat");
+      // router.replace("/(root)/(tabs)/chat");
     } catch (error: any) {
       console.error("OTP verification failed:", error);
       const errorMessage =

@@ -1,3 +1,53 @@
+/* Tailwind directives */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Custom utilities */
+.shadow-sm-light {
+  shadow-color: #000;
+  shadow-offset: 0px 1px;
+  shadow-opacity: 0.05;
+  shadow-radius: 2px;
+  elevation: 1;
+}
+
+.shadow-md-light {
+  shadow-color: #000;
+  shadow-offset: 0px 4px;
+  shadow-opacity: 0.1;
+  shadow-radius: 6px;
+  elevation: 3;
+}
+
+.shadow-lg-light {
+  shadow-color: #000;
+  shadow-offset: 0px 10px;
+  shadow-opacity: 0.1;
+  shadow-radius: 15px;
+  elevation: 5;
+}
+
+.shadow-sm-dark {
+  shadow-color: #fff;
+  shadow-offset: 0px 1px;
+  shadow-opacity: 0.05;
+  shadow-radius: 2px;
+  elevation: 1;
+}
+
+.shadow-md-dark {
+  shadow-color: #fff;
+  shadow-offset: 0px 4px;
+  shadow-opacity: 0.1;
+  shadow-radius: 6px;
+  elevation: 3;
+}
+
+.shadow-lg-dark {
+  shadow-color: #fff;
+  shadow-offset: 0px 10px;
+  shadow-opacity: 0.1;
+  shadow-radius: 15px;
+  elevation: 5;
+}

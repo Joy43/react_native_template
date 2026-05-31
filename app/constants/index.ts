@@ -1,12 +1,12 @@
-// --------slider---------
-import Mayabilake from '@/assets/images/android-icon-monochrome.png';
-import Modutila from '@/assets/images/android-icon-monochrome.png';
-import Gojniobokas from '@/assets/images/android-icon-monochrome.png';
+// -------- slider images ---------
+import Mayabilake  from '@/assets/images/slide1.png';
+import Modutila   from '@/assets/images/slide3.png';
+import Gojniobokas from '@/assets/images/slide2.png';
 
-// -----------logo-------
-
+// ----------- logo ---------------
 import applogo from '@/assets/images/android-icon-monochrome.png';
-type ImageSource = string;
+
+type ImageSource = ReturnType<typeof require>;
 
 interface OnboardingItem {
   id: number;
